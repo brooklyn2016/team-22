@@ -10,11 +10,12 @@ import {
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-export function signinUser({ username, password}) {
+export function signinUser({ username, password }) {
   // return a function with dispatch coming from redux thunk
   return function(dispatch) {
     axios.post(`${ROOT_URL}/login/`, { username, password })
       .then(response => {
+        console.log('sad');
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
         browserHistory.push('/home'); // go to home route
