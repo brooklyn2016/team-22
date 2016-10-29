@@ -20,7 +20,7 @@ class Home extends Component {
   if (lessonProps.length > 0) {
     lessons = lessonProps.map(lesson => {
       return (
-        <div key={lesson._id}>
+        <div className="flex-child" key={lesson._id}>
           <Link to={'/lesson'}>
             <ModuleIcon lesson={lesson}/>
           </Link>
@@ -36,8 +36,10 @@ class Home extends Component {
       !this.props.lessons ?
         <div>Loading...</div>
       :
-			<div>
-			   {this.renderLessons()}
+			<div className="background-img" >
+        <div className="flex-me">
+        			   {this.renderLessons()}
+        </div>
          <FooterNav />
 		 	</div>
 		);

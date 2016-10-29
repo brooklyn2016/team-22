@@ -13,5 +13,114 @@
     height: 100vh;
 }
 
+.noPadding {
+    padding-right: 0;
+}
+
+.formMargin {
+    margin-top: 45px;
+}
+
+.div-button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.form-group {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.background-img {
+    height: 100vh;
+    background-image: url('img/lessons.png')
+}
+
+.footer-nav {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+}
+
+.footer-btn {
+    float: left;
+    width:33.33%;
+    text-align: center;
+    padding-top: 15px;
+    border-right: 1px black solid;
+    background-color: white;
+    height: 70px;
+}
+
+.footer-btn:nth-child(1) {
+    background-image: url('img/achievement.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3em;
+}
+
+.footer-btn:nth-child(2) {
+    background-color: black;
+    background-image: url('img/lesson.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3em;
+}
+
+.footer-btn:last-child {
+    border-right: none;
+    background-image: url('img/profile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3em;
+}
+
+.flex-me {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-content: space-between;
+    padding-top: 30px;
+    height: 80vh;
+}
+
+.flex-child {
+    line-height: 2;
+    border-radius: 5px;
+    font-size: 1.4em;
+    margin-top: 20px;
+    height: 150px;
+    background-color: #FF5867;
+    flex: 0 0 34%;
+}
+
+.flex-child > a {
+    color: white;
+}
+
+.flex-child:nth-child(odd) {
+    margin-right: 15px;
+}
+
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+    .small-img {
+        height: 65vh;
+        width: auto;
+    }
+}
 
 /*   */
