@@ -155,8 +155,9 @@ html, body {
 }
 
 .lesson-bg > .container {
+
+    margin: 30px auto;
     height: 73%;
-    margin: 30px;
     border-radius: 30px;
     background-color: rgba(255,255,255, .75);
 }
