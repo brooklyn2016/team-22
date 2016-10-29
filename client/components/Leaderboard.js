@@ -21,7 +21,10 @@ class Leaderboard extends React.Component {
       rankData = data.map(rank => {
         return (
           <div className="" key={rank.name}>
-            <span>{rank.name}-{rank.points}</span>
+            <div className="card card-block">
+              <h4 className="card-title">{rank.name}</h4>
+              <p className="card-text">{rank.points}</p>
+            </div>
           </div>);
       });
     }
@@ -33,10 +36,14 @@ class Leaderboard extends React.Component {
       !this.props.leader ?
         <div>Loading...</div>
       :
-			<div>
-         {this.renderLeaderboard()}
-         <FooterNav />
-		 	</div>
+      <div className="lesson-bg leader-bg">
+        <div className="container  leaderboard-con">
+          <button className="btn btn-info leaderboard-btn">TODAY <div className="arrow-down"></div></button>
+          <button className="btn btn-danger leaderboard-btn">ADD FRIEND</button>
+          {this.renderLeaderboard()}
+        </div>
+        <FooterNav />
+       </div>
 		);
 	}
 }

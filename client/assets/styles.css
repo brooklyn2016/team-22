@@ -194,6 +194,30 @@ html, body {
     position:static;
 }
 
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  
+  border-top: 15px solid white;
+  display: inline-block
+}
+
+.leaderboard-btn {
+    width: 120px;
+}
+
+.leader-bg {
+    padding-top: 30px;
+}
+
+.leaderboard-con {
+    margin-top: 0 !important;
+    padding-top: 30px;
+}
+
+
 @media only screen and (min-width: 1023px) {
     /* Styles */
     .small-img {
