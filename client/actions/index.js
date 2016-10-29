@@ -4,7 +4,9 @@ import {
   AUTH_USER,
   AUTH_ERROR,
   UNAUTH_USER,
-  FETCH_LESSONS
+  FETCH_LESSONS,
+  FETCH_USER,
+  FETCH_LEADERBOARD
 } from './types';
 
 import axios from 'axios';
@@ -57,6 +59,41 @@ export function fetchLessons() {
       })
   }
 }
+
+export function fetchLeaderBoard() {
+  // return a function with dispatch coming from redux thunk
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/friends/`)
+      .then(response => {
+        console.log(response);
+        dispatch({
+          type: FETCH_LEADERBOARD,
+          payload: response
+        });
+      })
+      .catch((response) => {
+        console.log(response);
+      })
+  }
+}
+
+export function fetchUsers() {
+  // return a function with dispatch coming from redux thunk
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/user/`)
+      .then(response => {
+        console.log(response);
+        dispatch({
+          type: FETCH_USER,
+          payload: response
+        });
+      })
+      .catch((response) => {
+        console.log(response);
+      })
+  }
+}
+
 
 export function signoutUser() {
   localStorage.removeItem('token');
