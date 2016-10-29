@@ -60,26 +60,33 @@ router.get("/lessons/:name", function(req, res) {
 
 // returns user's points, zipcode, and modules started and progress in each, for
 // user profile page
-router.get("/user", ensureAuthenticated, (req, res) => {
-    const user = req.user;
-    console.log(req.user);
-    User.findOne({username: req.user.username}, function(err, existingUser) {
-        if (existingUser) {
-            return res.send({points: existingUser.points, zipCode: existingUser.zipCode,
-                lessons: existingUser.lessons});
-        }
-    });
+router.get("/user", (req, res) => {
+    //const user = req.user;
+    //console.log(req.user);
+    //User.findOne({username: req.user.username}, function(err, existingUser) {
+        //if (existingUser) {
+            //return res.send({points: existingUser.points, zipCode: existingUser.zipCode,
+                //lessons: existingUser.lessons});
+    return res.send({"firstName": "Victor",
+    "lastName": "Cruz",
+    "username": "vcruz80",
+    "zipCode": 10210,
+    "friends": [{"name":"mattb", "points":100}, {"name":"michelle-chiu", "points":105}, {"name":"jasond", "points":65}, {"name":"chengpan", "points":150}],
+    "points": 500,
+        });
+        //}
+    //});
 });
 
 // returns array of friends usernames and points, for leaderboard page
-router.get("/friends", ensureAuthenticated, function(req, res) {
-    const user = req.user;
-    console.log(req.user);
-    User.findOne({username: req.user.username}, function(err, existingUser) {
-        if (existingUser) {
-            return res.send({friends: existingUser.friends});
-        }
-    });
+router.get("/friends", function(req, res) {
+    //const user = req.user;
+    //console.log(req.user);
+    //User.findOne({username: req.user.username}, function(err, existingUser) {
+        //if (existingUser) {
+            return res.send({"friends": [{"name":"mattb", "points":100}, {"name":"michelle-chiu", "points":105}, {"name":"jasond", "points":65}, {"name":"chengpan", "points":150}]});
+        //}
+    //});
 });
 
 /*router.get("/events", ensureAuthenticated, function(req, res) {
