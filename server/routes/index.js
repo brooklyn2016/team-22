@@ -39,4 +39,8 @@ router.post("/modules", function(req, res) {
     });
 });
 
+router.get('/*', (req,res) => {
+	res.sendFile(path.join(__dirname,'../index.html'));
+});
+
 export default router;
