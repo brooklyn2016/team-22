@@ -25,7 +25,7 @@ router.post("/login", requireSignin, signIn);
 router.post("/lessons", function(req, res) {
     var data = req.body;
     var lessons = new Lesson({
-        lessonName: data.moduleName,
+        lessonName: data.lessonName,
         time: data.time,
         numQuestions: data.numQuestions,
         objective: data.objective,
