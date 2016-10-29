@@ -161,6 +161,7 @@ html, body {
 }
 
 .display-3::before {
+    font-size: 1.5em;
     padding-left: 20px;
     content: "\2190";
     padding-right: 15px;
@@ -170,6 +171,9 @@ html, body {
     .small-img {
         height: 65vh;
         width: auto;
+    }
+    .formMargin {
+        background-color: white;
     }
 }
 
