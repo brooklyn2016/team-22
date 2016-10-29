@@ -1,3 +1,15 @@
+html, body {
+    height: 100%;
+}
+
+#app {
+    height: 100%;
+}
+
+.app-child {
+    height: 100%;
+}
+
 .blueGradsient {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
     background: #a90329;
@@ -10,7 +22,7 @@
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=0);
     /* IE6-9 */
-    height: 100vh;
+    height: 100%;
 }
 
 .noPadding {
@@ -18,11 +30,19 @@
 }
 
 .formMargin {
-    margin-top: 45px;
+    padding-top: 45px;
+    background-color: #B3E5FC;
+    height: 50%;
+}
+
+.forgot-pw {
+    margin-top: 20px;
+    font-style: italic;
+    color: darkblue;
 }
 
 .div-button {
-    margin-top: 40px;
+    margin-top: 25px;
     text-align: center;
 }
 

@@ -18,7 +18,7 @@ class Login extends Component {
     const { handleSubmit, fields: { username, password }} = this.props;
 
     return (
-      <div className="blueGradient">
+      <div className="app-child">
             <img className="img-responsive center-block small-img" src="img/victorcruz.png" />
 
         <form className="formMargin text-center" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
@@ -28,6 +28,7 @@ class Login extends Component {
           <div className="form-group">
             <input className="form-control" {...password} type="password" placeholder="Password" />
           </div>
+          <div className="forgot-pw">Forgot password?</div>
           <div className="row">
             <div className="col-xs-6 div-button">
               <button className="btn btn-lg btn-success" action="submit">Login</button>
