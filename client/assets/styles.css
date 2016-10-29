@@ -217,6 +217,11 @@ html, body {
     text-align: center;
 }
 
+.profile-btn {
+    width: 200px;
+    margin: 5px;
+}
+
 .leaderboard-con {
     margin-top: 0 !important;
     padding-top: 30px;
