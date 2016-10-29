@@ -6,8 +6,6 @@ import FooterNav from './Footer';
 class Issac extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
-    console.log(this.props.lessons.lesson[0]);
   }
 
 	render() {
@@ -16,22 +14,53 @@ class Issac extends Component {
 
         <h3 className="display-3">{this.props.lessons.lesson[0].lessonName}</h3>
 
-        <p className="objective">Objective</p>
-        <p className="content">{this.props.lessons.lesson[0].objective}</p>
+      
+        <div id="myCarousel" className="carousel slide" data-ride="carousel">
+            <ol className="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
 
-        <p>
-        {this.props.lessons.lesson[0].background[0].title}
-        <br />
+            <div className="carousel-inner" role="listbox">
+              <div className="item active">
+              <p className="objective">Objective</p>
+              <p className="content">{this.props.lessons.lesson[0].objective}</p>
 
-				{this.props.lessons.lesson[0].background[0].desc}
-        </p>
+              </div>
 
-        <p>
-        {this.props.lessons.lesson[0].background[1].title}
-        <br />
-        {this.props.lessons.lesson[0].background[1].desc}
-        </p>
+              <div className="item">
+              <p>
+              {this.props.lessons.lesson[0].background[0].title}
+              <br />
 
+              {this.props.lessons.lesson[0].background[0].desc}
+              </p>
+
+              </div>
+
+              <div className="item">
+              <p>
+              {this.props.lessons.lesson[0].background[1].title}
+              <br />
+              {this.props.lessons.lesson[0].background[1].desc}
+              </p>
+              </div>
+
+              <div className="item">
+              </div>
+            </div>
+
+            <a className="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span className="sr-only">Previous</span>
+            </a>
+            <a className="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span className="sr-only">Next</span>
+            </a>
+          </div>
         <Link to={'/q1'}>
           <button>Questions</button>
         </Link>

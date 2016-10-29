@@ -46,7 +46,7 @@ html, body {
     text-align: center;
 }
 
-.div-button > button {
+.div-button>button {
     width: 100px;
     border-radius: 3px;
 }
@@ -77,7 +77,7 @@ html, body {
 }
 
 .footer-nav {
-    position: fixed; 
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -86,7 +86,7 @@ html, body {
 
 .footer-btn {
     float: left;
-    width:33.33%;
+    width: 33.33%;
     text-align: center;
     padding-top: 15px;
     border-right: 1px black solid;
@@ -138,7 +138,7 @@ html, body {
     flex: 0 0 34%;
 }
 
-.flex-child > a {
+.flex-child>a {
     color: white;
     font-size: 1.1em;
 }
@@ -165,9 +165,10 @@ html, body {
     padding-left: 20px;
     content: "\2190";
     padding-right: 15px;
-} 
-@media only screen  and (min-width : 1224px) {
-/* Styles */
+}
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
     .small-img {
         height: 65vh;
         width: auto;
@@ -177,4 +178,10 @@ html, body {
     }
 }
 
+
 /*   */
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 70%;
+    margin: auto;
+}
