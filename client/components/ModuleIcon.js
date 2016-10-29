@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './footer';
 
-class Home extends React.Component {
+class ModuleIcon extends React.Component {
 	render() {
 		return (
 			<div>
@@ -12,4 +12,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default ModuleIcon;

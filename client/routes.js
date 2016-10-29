@@ -9,6 +9,8 @@ import Login from './components/Login';
 export default (
   <Route path="/" component={App} >
     <IndexRoute component={Login} />
-      <Route component={Home} />
+      <Route path="/home" component={Home} />
+      <Route path="/leaderboard" component={Home} />
+      <Route path="/friends" component={Home} />
   </Route>
 );
