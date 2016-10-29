@@ -52,9 +52,13 @@ router.get("/modules", function(req, res) {
 router.get("/modules/:test", function(req, res) {
     Module.findOne({moduleName: req.params.test}, function(err, existingModule) {
         if (existingModule) {
-            return res.send({module: existingModule})
-;        }
+            return res.send({module: existingModule});
+        }
     });
+});
+
+router.get('/*', (req,res) => {
+	res.sendFile(path.join(__dirname,'../index.html'));
 });
 
 export default router;
