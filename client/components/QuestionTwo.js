@@ -12,20 +12,24 @@ class QuestionTwo extends Component {
 	render() {
 		return (
       // lesson, material, instruct, question, funfact
-			<div>
-      <div>{this.props.lessons.lesson[0].questions[1].lesson}</div>
-      <div>{this.props.lessons.lesson[0].questions[1].materials[0]}</div>
-      <div>{this.props.lessons.lesson[0].questions[1].materials[1]}</div>
+			<div className="lesson-bg">
+        <h3 className="display-3">Lesson #2</h3>
 
-      <div>{this.props.lessons.lesson[0].questions[1].instruction}</div>
-      <div>{this.props.lessons.lesson[0].questions[1].question}</div>
-      <div>{this.props.lessons.lesson[0].questions[1].funFact}</div>
+        <div className="container">
+          <br/>
+          <p>{this.props.lessons.lesson[0].questions[1].lesson}</p>
+          <p>Materials: {this.props.lessons.lesson[0].questions[1].materials[0]}, {this.props.lessons.lesson[0].questions[1].materials[1]}</p>
+
+          <p>{this.props.lessons.lesson[0].questions[1].instruction}</p>
+          <p>{this.props.lessons.lesson[0].questions[1].question}</p>
+          <p>{this.props.lessons.lesson[0].questions[1].funFact}</p>
 
 
 
-        <Link to={'/q3'}>
-          <button>Questions </button>
-        </Link>
+            <Link to={'/home'}>
+              <button className="btn btn-info">Submit </button>
+            </Link>
+        </div>
 
         <FooterNav />
 
