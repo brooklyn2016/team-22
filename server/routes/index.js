@@ -80,12 +80,12 @@ router.get("/lessons/:name", function(req, res) {
     });
 });
 
-router.get("/test", e (req, res) => {
+router.get("/test", ensureAuthenticated, (req, res) => {
     console.log(req.user);
     res.send(req.user)
 });
 
-router.get('/*', ensureAuthenticated, (req,res) => {
+router.get('/*', (req,res) => {
 	res.sendFile(path.join(__dirname,'../index.html'));
 });
 
