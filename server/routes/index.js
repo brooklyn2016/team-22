@@ -39,4 +39,22 @@ router.post("/modules", function(req, res) {
     });
 });
 
+// get all modules
+router.get("/modules", function(req, res) {
+    Module.find({}, function(err, existingModule) {
+        if (existingModule) {
+            return res.send({module: existingModule})
+;        }
+    });
+});
+
+// get specified modules
+router.get("/modules/:test", function(req, res) {
+    Module.findOne({moduleName: req.params.test}, function(err, existingModule) {
+        if (existingModule) {
+            return res.send({module: existingModule})
+;        }
+    });
+});
+
 export default router;
