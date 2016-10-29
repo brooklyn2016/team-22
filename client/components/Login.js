@@ -33,7 +33,7 @@ class Login extends Component {
               <button className="btn btn-lg btn-success" action="submit">Login</button>
             </div>
             <div className="col-xs-6 div-button">
-              <button className="btn btn-lg btn-success">Sign Up</button>
+              <button className="btn btn-lg btn-info">Sign Up</button>
             </div>
           </div>
         </form>

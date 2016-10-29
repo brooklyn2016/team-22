@@ -26,6 +26,11 @@
     text-align: center;
 }
 
+.div-button > button {
+    width: 100px;
+    border-radius: 3px;
+}
+
 .form-group {
     width: 80%;
     margin: 0 auto;
@@ -43,6 +48,12 @@
 .background-img {
     height: 100vh;
     background-image: url('img/lessons.png')
+}
+
+.form-control {
+    border-radius: 0;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .footer-nav {
