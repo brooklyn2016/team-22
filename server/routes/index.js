@@ -1,8 +1,9 @@
 import express from 'express';
 import path from 'path';
 import passport from 'passport';
-import Lesson from "../../models/lesson"
+import Lesson from '../../models/lesson'
 import passportConfig from '../../models/passport';
+import User from '../../models/user'
 
 import { signUp, signIn } from '../../models/authentication';
 
@@ -40,7 +41,7 @@ router.post("/lessons", function(req, res) {
     });
 });
 
-// get all modules
+// get all lessons
 router.get("/lessons", function(req, res) {
     Lesson.find({}, function(err, existingLesson) {
         if (existingLesson) {
@@ -49,9 +50,9 @@ router.get("/lessons", function(req, res) {
     });
 });
 
-// get specified modules
-router.get("/lessons/:test", function(req, res) {
-    Lesson.findOne({moduleName: req.params.test}, function(err, existingLesson) {
+// get specified lesson
+router.get("/lessons/:name", function(req, res) {
+    Lesson.findOne({lessonName: req.params.name}, function(err, existingLesson) {
         if (existingLesson) {
             return res.send({lesson: existingLesson});
         }
