@@ -23,8 +23,8 @@ class Profile extends React.Component {
          <div className="card card-block">
            <h4 className="card-title">{this.props.user.firstName} {this.props.user.lastName}</h4>
            <p>{this.props.user.points} points</p>
-           <div><button className="btn btn-success profile-btn">EDIT INFORMATION</button></div>
-           <div><button className="btn btn-success profile-btn">LOG OUT</button></div>
+           <div><button className="btn btn-info profile-btn">EDIT INFORMATION</button></div>
+           <div><button className="btn btn-danger profile-btn">LOG OUT</button></div>
          </div>
          </div>
          <FooterNav />
