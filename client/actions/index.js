@@ -1,5 +1,11 @@
 const ROOT_URL = 'http://localhost:3000';
 
+import {
+  AUTH_USER,
+  AUTH_ERROR,
+  UNAUTH_USER,
+  FETCH_LESSONS
+} from './types';
 
 import axios from 'axios';
 import { browserHistory } from 'react-router';
@@ -27,6 +33,23 @@ export function signupUser({ firstName, lastName, userName, password }) {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
         browserHistory.push('/home'); // go to home route
+      })
+      .catch((response) => {
+        console.log(response);
+      })
+  }
+}
+
+export function fetchLessons() {
+  // return a function with dispatch coming from redux thunk
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/lessons/`)
+      .then(response => {
+        console.log(response);
+        dispatch({
+          type: FETCH_LESSONS,
+          payload: response
+        });
       })
       .catch((response) => {
         console.log(response);

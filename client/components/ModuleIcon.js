@@ -1,12 +1,16 @@
 import React from 'react';
-import Footer from './footer';
+import FooterNav from './Footer';
 
 class ModuleIcon extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.lesson);
+  }
+
 	render() {
 		return (
 			<div>
-			   home page after login
-         <Footer />
+			   <span>{this.props.lesson.lessonName}</span>
 		 	</div>
 		);
 	}
