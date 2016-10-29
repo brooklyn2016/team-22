@@ -116,6 +116,24 @@
     margin-right: 15px;
 }
 
+.objective {
+    color: dodgerblue;
+    text-transform: uppercase;
+}
+
+.display-3 {
+    background-color: dodgerblue;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    margin: 0;
+}
+
+.display-3::before {
+    padding-left: 20px;
+    content: "\2190";
+    padding-right: 15px;
+} 
 @media only screen  and (min-width : 1224px) {
 /* Styles */
     .small-img {

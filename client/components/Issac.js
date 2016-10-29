@@ -14,9 +14,9 @@ class Issac extends Component {
 		return (
 			<div>
 
-        {this.props.lessons.lesson[0].lessonName}
-
-        <p>{this.props.lessons.lesson[0].objective}</p>
+        <h3 className="display-3">{this.props.lessons.lesson[0].lessonName}</h3>
+        <p className="objective">Objective</p>
+        <p className="content">{this.props.lessons.lesson[0].objective}</p>
 
         <p>
         {this.props.lessons.lesson[0].background[0].title}
