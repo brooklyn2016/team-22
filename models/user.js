@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema({
     username: {type: String, unique: true},
     password: String,
     created: Number,
-
     lessons: Array,
+    points: Number
 });
 
 userSchema.pre('save', function (next) {
