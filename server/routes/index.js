@@ -82,6 +82,17 @@ router.get("/friends", ensureAuthenticated, function(req, res) {
     });
 });
 
+/*router.get("/events", ensureAuthenticated, function(req, res) {
+    const user = req.user;
+    var zip = User.findOne({zipCode: req.user.zipCode});
+    var request = require('request');
+    return (request('api.seatgeek.com/2/events?q=science&postal_code=10001&client_id=NjA3NDgyOHwxNDc3NzI3NDgx', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body); // Show the HTML for the Modulus homepage.
+        }
+    }));
+});*/
+
 router.get('/*', (req,res) => {
 	res.sendFile(path.join(__dirname,'../index.html'));
 });

@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 class FooterNav extends React.Component {
 	render() {
 		return (
-      <nav>
-        <Link to="/home">Modules </Link>
-        <Link to="/friends">Friends</Link>
-        <Link to="/Leaderboard">Leaderboard</Link>
+      <nav className="footer-nav">
+        <div className="footer-btn"><Link to="/home"></Link></div>
+        <div className="footer-btn"><Link to="/friends"></Link></div>
+        <div className="footer-btn"><Link to="/Leaderboard"></Link></div>
       </nav>
 		);
 	}

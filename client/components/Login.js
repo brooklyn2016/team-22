@@ -19,22 +19,24 @@ class Login extends Component {
 
     return (
       <div className="blueGradient">
-        <div className="row">
-          <div className="col-sm-12">
-            <img className="img-responsive" src="img/victorcruz.png" />
-          </div>
-        </div>
+            <img className="img-responsive center-block small-img" src="img/victorcruz.png" />
 
-        <form className="row" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-            <div className="col-sm-12">
-                <input {...username} type="text" placeholder="Username" />
-              </div>
-              <div className="col-sm-12">
-                <input {...password} type="password" placeholder="Password" />
-              </div>
-                <button className="col-sm-6" action="submit">Login</button>
-                <button className="col-sm-6">Sign up</button>
-            </form>
+        <form className="formMargin text-center" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <div className="form-group">
+            <input className="form-control" {...username} type="text" placeholder="Username" />
+          </div>
+          <div className="form-group">
+            <input className="form-control" {...password} type="password" placeholder="Password" />
+          </div>
+          <div className="row">
+            <div className="col-xs-6 div-button">
+              <button className="btn btn-lg btn-success" action="submit">Login</button>
+            </div>
+            <div className="col-xs-6 div-button">
+              <button className="btn btn-lg btn-success">Sign Up</button>
+            </div>
+          </div>
+        </form>
       </div>
     )
   }
