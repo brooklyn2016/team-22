@@ -5,9 +5,9 @@ Code For Good Hackathon in Brooklyn, NY, by Matt Beauchamp, Michelle Chiu,
 Jason Deng, Varun Gupta, Cheng Pan.
 
 ### Running this webapp
-installation instructions:
-'npm install'
-'npm run server'
+'''
+npm install
+npm run server
+'''
 
 This will begin a webserver on localhost:3000
-
