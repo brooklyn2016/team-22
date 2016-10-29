@@ -5,7 +5,7 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div>
-			   home page after login
+			   home page afterd login
          <Footer />
 		 	</div>
 		);
