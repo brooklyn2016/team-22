@@ -148,8 +148,22 @@ html, body {
 }
 
 .objective {
+    font-weight: bold;
+    text-align: center;
     color: dodgerblue;
     text-transform: uppercase;
+}
+
+.lesson-bg > .container {
+    height: 73%;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: rgba(255,255,255, .75);
+}
+
+.lesson-bg {
+    height: 100%;
+    background-image: url('img/lessons.png');
 }
 
 .display-3 {
@@ -166,6 +180,15 @@ html, body {
     content: "\2190";
     padding-right: 15px;
 }
+
+#myCarousel {
+    margin-top: 25px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
 
 @media only screen and (min-width: 1224px) {
     /* Styles */
