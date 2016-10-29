@@ -18,7 +18,7 @@ try {
     url = process.env.MONGODB_URI || config.MONGODB_URI;
 }
 catch (e) {
-    if (e.code === 'MODULE_NOT_FOUND') {
+    if (e.code === 'LESSON_NOT_FOUND') {
         console.log("CANNOT LOAD env.json");
     }
 }

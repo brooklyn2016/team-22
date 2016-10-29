@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import passport from 'passport';
-import Module from "../../models/module"
+import Lesson from "../../models/lesson"
 
 import { signUp, signIn } from '../../models/authentication';
 
@@ -21,38 +21,38 @@ router.post("/register", signUp);
 router.post("/login", requireSignin, signIn);
 
 // SEND objective
-router.post("/modules", function(req, res) {
+router.post("/lessons", function(req, res) {
     var data = req.body;
-    var modules = new Module({
-        moduleName: data.moduleName,
+    var lessons = new Lesson({
+        lessonName: data.moduleName,
         time: data.time,
         numQuestions: data.numQuestions,
         objective: data.objective,
         background: data.background,
         questions: data.questions,
     });
-    modules.save(function( err) {
+    lessons.save(function( err) {
         if (err) {
             return res.send(err);
         }
-        res.status(201).send({message: "Module created succesfully!"});
+        res.status(201).send({message: "Lesson created succesfully!"});
     });
 });
 
 // get all modules
-router.get("/modules", function(req, res) {
-    Module.find({}, function(err, existingModule) {
-        if (existingModule) {
-            return res.send({module: existingModule})
+router.get("/lessons", function(req, res) {
+    Module.find({}, function(err, existingLesson) {
+        if (existingLesson) {
+            return res.send({lesson: existingLesson})
 ;        }
     });
 });
 
 // get specified modules
-router.get("/modules/:test", function(req, res) {
-    Module.findOne({moduleName: req.params.test}, function(err, existingModule) {
-        if (existingModule) {
-            return res.send({module: existingModule});
+router.get("/lessons/:test", function(req, res) {
+    Lesson.findOne({moduleName: req.params.test}, function(err, existingLesson) {
+        if (existingLesson) {
+            return res.send({lesson: existingLesson});
         }
     });
 });

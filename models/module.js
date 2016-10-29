@@ -3,8 +3,8 @@ import jwt from "jsonwebtoken";
 import moment from "moment";
 import mongoose from "mongoose";
 
-const moduleSchema = new mongoose.Schema({
-    moduleName: String,
+const lessonSchema = new mongoose.Schema({
+    lessonName: String,
     time: Number,
     numQuestions: Number,
     objective: String,
@@ -12,4 +12,4 @@ const moduleSchema = new mongoose.Schema({
     questions: Array,
 });
 
-export default mongoose.model("Module", moduleSchema);
+export default mongoose.model("Lesson", lessonSchema);
