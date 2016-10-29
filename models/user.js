@@ -9,7 +9,9 @@ const userSchema = new mongoose.Schema({
     password: String,
     created: Number,
 
-    lessons: Array,
+    lessons: Array, // will include objects conaining: lesson name, percent
+                    // progress, number of questions completed, and number of
+                    // questions left
 });
 
 userSchema.pre('save', function (next) {
