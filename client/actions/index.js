@@ -45,7 +45,6 @@ export function fetchLessons() {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/lessons/`)
       .then(response => {
-        console.log(response);
         dispatch({
           type: FETCH_LESSONS,
           payload: response

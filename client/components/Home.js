@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import ModuleIcon from './ModuleIcon';
 import FooterNav from './Footer';
+import { Link } from 'react-router';
 
 class Home extends Component {
   constructor(props) {
@@ -18,10 +19,11 @@ class Home extends Component {
   let lessons = null;
   if (lessonProps.length > 0) {
     lessons = lessonProps.map(lesson => {
-      console.log(lesson);
       return (
         <div key={lesson._id}>
-          <ModuleIcon lesson={lesson}/>
+          <Link to={'/lesson'}>
+            <ModuleIcon lesson={lesson}/>
+          </Link>
         </div>);
     });
   }
