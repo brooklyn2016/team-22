@@ -27,7 +27,7 @@ mongoose.connect(url);
 
 const compiler = webpack(webpackConfig)
 app.use(express.static(path.join(__dirname, 'routes')));
-app.use(express.static(path.join(__dirname, '../client/assets')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'assets')));
 app.use(webpackMiddleware(compiler, {
 	publicPath: webpackConfig.output.publicPath,
 	noInfo: true
