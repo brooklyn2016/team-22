@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
     lessons: Array, // will include objects conaining: lesson name, percent
                     // progress, number of questions completed, and number of
                     // questions left
+    friends: Array, // includes friends usernames and points
     points: Number
 });
 
