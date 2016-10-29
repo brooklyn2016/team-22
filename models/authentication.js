@@ -2,7 +2,7 @@ import User from "./user";
 import jwt from "jsonwebtoken";
 import moment from "moment";
 
-var config;
+let config;
 try {
   config = require('../env.json');
 }
@@ -17,14 +17,15 @@ catch (e) {
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
   // iat = issued at time
-  return jwt.sign({sub: user.id, fullname: user.fullname ,username: user.username ,iat: timestamp}, config.SECRET_KEY, {expiresIn: '7d'});
+  return jwt.sign({sub: user.id, firstName: user.firstName, lastName: user.lastName, username: user.username ,iat: timestamp}, config.SECRET_KEY, {expiresIn: '7d'});
   // return jwt.encode({sub: user.id, iat: timestamp}, config.SECRET_KEY);
 }
 
 export const signUp = function(req, res, next) {
   const username = req.body.username;
   const password = req.body.password;
-  const fullname = req.body.fullname;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
 
   if(!username || !password) {
     return res.status(422).send({error: 'You must provide email and password'});
@@ -40,9 +41,10 @@ export const signUp = function(req, res, next) {
     }
 
     const user = new User({
-      fullname: fullname,
-      username: username,
-      password: password,
+      firstName,
+      lastName,
+      username,
+      password,
       created: moment().unix()
     });
 

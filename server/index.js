@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
@@ -32,6 +33,8 @@ app.use(webpackMiddleware(compiler, {
 	publicPath: webpackConfig.output.publicPath,
 	noInfo: true 
 }));
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({extended: false, limit: '5mb'}));
 app.use(webpackHotMiddleware(compiler));
 app.use('/', routes);
 

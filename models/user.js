@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import passportMongoose from "passport-local-mongoose";
 import moment from "moment";
 import bcrypt from "bcrypt-nodejs";
 
 const userSchema = new mongoose.Schema({
-    fullname: String,
+    firstName: String,
+    lastName: String,
     username: {type: String, unique: true},
     password: String,
     created: Number,
