@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import FooterNav from './Footer';
 
+              // <ol className="carousel-indicators">
+              //   <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+              //   <li data-target="#myCarousel" data-slide-to="1"></li>
+              //   <li data-target="#myCarousel" data-slide-to="2"></li>
+              // </ol>
 class Issac extends Component {
   constructor(props) {
     super(props);
@@ -16,13 +21,8 @@ class Issac extends Component {
 
         <div className="container">
       
-          <div id="myCarousel" className="carousel slide" data-ride="carousel">
-              <ol className="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>
+          <div id="myCarousel" className="carousel slide" data-wrap="false" data-ride="carousel">
+
 
               <div className="carousel-inner" role="listbox">
                 <div className="item active">
@@ -47,9 +47,11 @@ class Issac extends Component {
                 <br />
                 {this.props.lessons.lesson[0].background[1].desc}
                 </p>
-                <Link to={'/q1'}>
-                  <button className="btn btn-lg btn-success">BEGIN MODULE</button>
-                </Link>
+                <div className="carousel-caption">
+                  <Link className="btn btn-success" to={'/q1'}>
+                    BEGIN MODULE
+                  </Link>
+                </div>
                 </div>
               </div>
 

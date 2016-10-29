@@ -11,15 +11,20 @@ class QuestionOne extends Component {
 
 	render() {
 		return (
-			<div>
-        <div>{this.props.lessons.lesson[0].questions[0].question[0]}</div>
-        <div>{this.props.lessons.lesson[0].questions[0].question[1]}</div>
+			<div className="lesson-bg">
+        <h3 className="display-3">Lesson #1</h3>
 
-        <Link to={'/q2'}>
-          <button>Submit </button>
-        </Link>
+        <div className="container">
+        <br/>
+          <p>{this.props.lessons.lesson[0].questions[0].question[0]}</p>
+          <p>{this.props.lessons.lesson[0].questions[0].question[1]}</p>
 
-        <FooterNav />
+          <Link to={'/q2'}>
+            <button className="btn btn-info">Submit </button>
+          </Link>
+          </div>
+
+          <FooterNav />
 
 		 	</div>
 		);
