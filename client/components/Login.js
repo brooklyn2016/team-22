@@ -17,7 +17,7 @@ class Login extends Component {
 
     return (
       <div>
-        <img src="" />
+        <img src="../assets/img/victorcruz.png" />
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <label>Username</label>
             <input {...username} type="text" placeholder="Enter username" />
