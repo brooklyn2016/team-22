@@ -12,6 +12,27 @@ const requireSignin = passport.authenticate('local', {session: false});
 
 let router = express();
 
+function ensureAuthenticated(req, res, next) {
+    if (!req.header('Authorization')) {
+        return res.status(401).send({message: 'Please make sure your request has an Authorization header'});
+    }
+    var token = req.header('Authorization').split(' ')[1];
+
+    var payload = null;
+    try {
+        payload = jwt.verify(token, config.SECRET_KEY);
+    }
+    catch (err) {
+        return res.status(401).send({message: err.message});
+    }
+
+    if (payload.exp <= moment().unix()) {
+        return res.status(401).send({message: 'Token has expired'});
+    }
+    req.user = payload;
+    next();
+}
+
 router.get('/', (req,res) => {
 	res.sendFile(path.join(__dirname,'../index.html'));
 });
@@ -59,7 +80,12 @@ router.get("/lessons/:name", function(req, res) {
     });
 });
 
-router.get('/*', (req,res) => {
+router.get("/test", e (req, res) => {
+    console.log(req.user);
+    res.send(req.user)
+});
+
+router.get('/*', ensureAuthenticated, (req,res) => {
 	res.sendFile(path.join(__dirname,'../index.html'));
 });
 

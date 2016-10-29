@@ -8,7 +8,7 @@ const lessonSchema = new mongoose.Schema({
     time: Number,
     numQuestions: Number,
     objective: String,
-    background: String,
+    background: Array,
     questions: Array,
 });
 
