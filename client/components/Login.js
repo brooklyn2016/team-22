@@ -8,8 +8,8 @@ class Login extends Component {
   handleFormSubmit({ username, password }) {
     // Need to do something to log user in
     console.log(this.props);
-    //this.props.signinUser({ username, password });
-    browserHistory.push('/home'); // go to home route
+    this.props.signinUser({ username, password });
+    // browserHistory.push('/home'); // go to home route
   }
 
   render() {
@@ -32,6 +32,6 @@ class Login extends Component {
 }
 
 export default reduxForm({
-  form: 'Login',
+  form: 'login',
   fields: ['username', 'password']
 }, null, actions)(Login);
