@@ -19,11 +19,28 @@ class Profile extends React.Component {
         <div>Loading...</div>
       :
 			<div>
+      <div>
 			   {this.props.user.firstName}
+         </div>
+         <div>
+
          {this.props.user.lastName}
+         </div>
+
+         <div>
+
          {this.props.user.username}
+         </div>
+
+         <div>
+
          {this.props.user.points}
+         </div>
+
+         <div>
+
          {this.props.user.zipCode}
+         </div>
 
          <FooterNav />
 		 	</div>

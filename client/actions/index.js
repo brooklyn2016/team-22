@@ -85,7 +85,7 @@ export function fetchUsers() {
         console.log(response);
         dispatch({
           type: FETCH_USER,
-          payload: response
+          payload: response.data
         });
       })
       .catch((response) => {
