@@ -156,7 +156,7 @@ html, body {
 
 .lesson-bg > .container {
 
-    margin: 30px auto;
+    margin: 30px;
     height: 73%;
     border-radius: 30px;
     background-color: rgba(255,255,255, .75);
@@ -202,6 +202,10 @@ html, body {
     }
     .formMargin {
         background-color: white;
+    }
+
+    .lesson-bg > .container {
+        margin: 30px auto;
     }
 }
 
