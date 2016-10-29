@@ -42,7 +42,7 @@ router.post("/lessons", function(req, res) {
 
 // get all modules
 router.get("/lessons", function(req, res) {
-    Module.find({}, function(err, existingLesson) {
+    Lesson.find({}, function(err, existingLesson) {
         if (existingLesson) {
             return res.send({lesson: existingLesson})
 ;        }
