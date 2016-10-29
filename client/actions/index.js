@@ -10,7 +10,7 @@ import {
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-export function signinUser({ username, password }) {
+export function signInUser({ username, password }) {
   // return a function with dispatch coming from redux thunk
   return function(dispatch) {
     axios.post(`${ROOT_URL}/login/`, { username, password })
@@ -46,6 +46,7 @@ export function fetchLessons() {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/lessons/`)
       .then(response => {
+        console.log(response);
         dispatch({
           type: FETCH_LESSONS,
           payload: response

@@ -3,12 +3,15 @@ import { reduxForm } from 'redux-form';
 import * as actions from '../actions/';
 import { Link, browserHistory } from 'react-router';
 
+console.log(actions);
 class Login extends Component {
   handleFormSubmit({ username, password }) {
     // Need to do something to log user in
+    console.log(username, password);
+    //this.props.signInUser({ username, password });
     console.log(this.props);
-    this.props.signinUser({ username, password });
-    // browserHistory.push('/home'); // go to home route
+
+     browserHistory.push('/home'); // go to home route
   }
 
   render() {
@@ -22,9 +25,9 @@ class Login extends Component {
           </div>
         </div>
 
-            <form className="row" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <form className="row" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
             <div className="col-sm-12">
-                <input className="" {...username} type="text" placeholder="Username" />
+                <input {...username} type="text" placeholder="Username" />
               </div>
               <div className="col-sm-12">
                 <input {...password} type="password" placeholder="Password" />
@@ -38,6 +41,6 @@ class Login extends Component {
 }
 
 export default reduxForm({
-  form: 'Login',
+  form: 'signin',
   fields: ['username', 'password']
 }, null, actions)(Login);

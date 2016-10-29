@@ -1,35 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import FooterNav from './Footer';
 
 class Issac extends Component {
   constructor(props) {
     super(props);
-
-    console.log(this.props.lessons.lesson[5]);
+    console.log(this.props);
+    console.log(this.props.lessons.lesson[0]);
   }
 
 	render() {
 		return (
 			<div>
 
-        {this.props.lessons.lesson[5].lessonName}
+        {this.props.lessons.lesson[0].lessonName}
 
-        <p>{this.props.lessons.lesson[5].objective}</p>
+        <p>{this.props.lessons.lesson[0].objective}</p>
 
         <p>
-        {this.props.lessons.lesson[5].background[0].title}
+        {this.props.lessons.lesson[0].background[0].title}
         <br />
 
-				{this.props.lessons.lesson[5].background[0].desc}
+				{this.props.lessons.lesson[0].background[0].desc}
         </p>
 
         <p>
-        {this.props.lessons.lesson[5].background[1].title}
+        {this.props.lessons.lesson[0].background[1].title}
         <br />
-        {this.props.lessons.lesson[5].background[1].desc}
+        {this.props.lessons.lesson[0].background[1].desc}
         </p>
-      
-        <button>Questions </button>
+
+        <Link to={'/q1'}>
+          <button>Questions</button>
+        </Link>
+
+        <FooterNav />
 		 	</div>
 		);
 	}
