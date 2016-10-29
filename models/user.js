@@ -9,8 +9,8 @@ const userSchema = new mongoose.Schema({
     password: String,
     created: Number,
 
-    lesson1Started: Boolean;
-    lesson1QuestionsLeft: Number;
+    //lesson1Started: Boolean;
+    //lesson1QuestionsLeft: Number;
 });
 
 userSchema.pre('save', function (next) {
