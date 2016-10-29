@@ -19,7 +19,6 @@ router.get('/', (req,res) => {
 router.post("/register", signUp);
 
 // LOGIN ROUTE
-
 router.post("/login", requireSignin, signIn);
 
 // SEND objective
@@ -41,7 +40,7 @@ router.post("/lessons", function(req, res) {
     });
 });
 
-// get all lessons
+// get all lessons, to populate main app page
 router.get("/lessons", function(req, res) {
     Lesson.find({}, function(err, existingLesson) {
         if (existingLesson) {
@@ -59,6 +58,8 @@ router.get("/lessons/:name", function(req, res) {
     });
 });
 
+// returns user's points, zipcode, and modules started and progress in each, for
+// user profile page
 router.get("/user", ensureAuthenticated, (req, res) => {
     const user = req.user;
     console.log(req.user);
@@ -66,6 +67,17 @@ router.get("/user", ensureAuthenticated, (req, res) => {
         if (existingUser) {
             return res.send({points: existingUser.points, zipCode: existingUser.zipCode,
                 lessons: existingUser.lessons});
+        }
+    });
+});
+
+// returns array of friends usernames and points, for leaderboard page
+router.get("/friends", ensureAuthenticated, function(req, res) {
+    const user = req.user;
+    console.log(req.user);
+    User.findOne({username: req.user.username}, function(err, existingUser) {
+        if (existingUser) {
+            return res.send({friends: existingUser.friends});
         }
     });
 });
