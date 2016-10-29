@@ -60,9 +60,14 @@ router.get("/lessons/:name", function(req, res) {
 });
 
 router.get("/user", ensureAuthenticated, (req, res) => {
-    const user = req.user
+    const user = req.user;
     console.log(req.user);
-    res.send(req.user)
+    User.findOne({username: req.user.username}, function(err, existingUser) {
+        if (existingUser) {
+            return res.send({points: existingUser.points, zipCode: existingUser.zipCode,
+                lessons: existingUser.lessons});
+        }
+    });
 });
 
 router.get('/*', (req,res) => {

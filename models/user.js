@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     username: {type: String, unique: true},
     password: String,
     created: Number,
+    zipCode: Number,
 
     lessons: Array, // will include objects conaining: lesson name, percent
                     // progress, number of questions completed, and number of
