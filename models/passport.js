@@ -22,11 +22,9 @@ const localOptions = {
 const localLogin = new localStrategy(localOptions, function(username, password, done) {
   User.findOne({username: username}, function(error, user) {
     if (error) {
-      console.log("error: ",error);
       return done(error);
     }
     if (!user) {
-      console.log("error:", error);
       return done(null, false);
     }
 
@@ -34,11 +32,9 @@ const localLogin = new localStrategy(localOptions, function(username, password, 
     console.log(user);
     user.comparePassword(password, function(error, isMatch) {
       if (error) {
-        console.log("error1:", error);
         return done(error);
       }
       if (!isMatch) {
-        console.log("error2:", error);
         return done(null, false);
       }
 
@@ -59,11 +55,9 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
   // otherwise, call done without a user object
   User.findById(payload.sub, function(error, user) {
     if (error) {
-      console.log("error: ", error);
       return done(error, false);
     }
     if (user) {
-      console.log("GOT USER");
       done(null, user);
     } else {
       done(null, false);

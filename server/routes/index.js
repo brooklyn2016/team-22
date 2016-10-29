@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import passport from 'passport';
 import Lesson from "../../models/lesson"
+import passportConfig from '../../models/passport';
 
 import { signUp, signIn } from '../../models/authentication';
 
