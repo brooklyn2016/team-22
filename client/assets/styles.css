@@ -206,16 +206,55 @@ html, body {
 
 .leaderboard-btn {
     width: 120px;
+    margin: 10px 10px;
+}
+
+.btn-challenge {
+    border-radius: 5px;
 }
 
 .leader-bg {
-    padding-top: 30px;
+    text-align: center;
 }
 
 .leaderboard-con {
     margin-top: 0 !important;
     padding-top: 30px;
+    background-color: rgba(0,0,0,0) !important;
 }
+
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: 0.75rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-block {
+  padding: 1.25rem;
+}
+
+.card-block::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
 
 
 @media only screen and (min-width: 1023px) {

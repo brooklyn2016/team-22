@@ -22,8 +22,8 @@ class Leaderboard extends React.Component {
         return (
           <div className="" key={rank.name}>
             <div className="card card-block">
-              <h4 className="card-title">{rank.name}</h4>
-              <p className="card-text">{rank.points}</p>
+              <h4 className="card-title">{rank.name} - {rank.points}</h4>
+              <button className="btn btn-success btn-challenge">CHALLENGE FRIEND</button>
             </div>
           </div>);
       });
