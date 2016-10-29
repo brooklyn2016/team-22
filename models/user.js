@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     lessons: Array, // will include objects conaining: lesson name, percent
                     // progress, number of questions completed, and number of
                     // questions left
+    points: Number
 });
 
 userSchema.pre('save', function (next) {
