@@ -5,7 +5,6 @@ import bodyParser from 'body-parser';
 
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
 
 import routes from './routes/index.js'
@@ -29,13 +28,11 @@ mongoose.connect(url);
 const compiler = webpack(webpackConfig)
 app.use(express.static(path.join(__dirname, 'routes')));
 app.use(webpackMiddleware(compiler, {
-	hot:true,
 	publicPath: webpackConfig.output.publicPath,
-	noInfo: true 
+	noInfo: true
 }));
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({extended: false, limit: '5mb'}));
-app.use(webpackHotMiddleware(compiler));
 app.use('/', routes);
 
 app.listen(3000, () => console.log('running on localhost:3000'));
